@@ -1,0 +1,107 @@
+@import "Variables.scss";
+
+.MainContainer,
+.MainContainer__Chat,
+.MainContainer__Chat--Content,
+.MainContainer__Chat--Conversation,
+.MainContainer__Chat--Image,
+.MainContainer__Side,
+.MainContainer__Side--Contacts,
+.MainContainer__Side--Content,
+.MainContainer__Side--Notification,
+.MainContainer__Side--SearchBar {
+  display: flex;
+}
+
+.MainContainer {
+  background: red;
+  width: $breakpoint-md;
+  height: calc(100% - 40px);
+  max-height: 1042px;
+}
+
+.MainContainer__Side {
+  flex-direction: column;
+  flex: 30%;
+  background: yellow;
+}
+
+.MainContainer__Side--Notification {
+  background-color: $secondary;
+  padding: 13px 12px 14px 13px;
+  height: 62px;
+}
+
+.MainContainer__Side--SearchBar {
+  background-color: $grey-2;
+  height: 49px;
+}
+
+.MainContainer__Side--Contacts {
+  flex-grow: 1;
+  flex-direction: column;
+  background-color: white;
+}
+
+.MainContainer__Side--Content {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.MainContainer__Chat {
+  flex-direction: column;
+  flex: 70%;
+}
+
+.MainContainer__Chat--Image {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-chat-color;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 460px;
+  }
+
+  img {
+    width: 355px;
+    height: 355px;
+  }
+}
+
+@media screen and (max-width: $breakpoint-md) {
+  .MainContainer {
+    height: 100%;
+    max-height: none;
+    width: 100%;
+  }
+
+  .InputSearch {
+    input {
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm-md) {
+  .MainContainer__Side {
+    flex: 35%;
+  }
+  .MainContainer__Chat {
+    flex: 65%;
+  }
+}
+
+@media screen and (max-width: $breakpoint-xs-sm) {
+  .MainContainer__Side {
+    flex: 40%;
+    min-width: 259px;
+  }
+  .MainContainer__Chat {
+    flex: 60%;
+  }
+}

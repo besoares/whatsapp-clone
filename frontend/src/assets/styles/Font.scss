@@ -1,0 +1,23 @@
+@import "Variables.scss";
+
+.TextInfo {
+  color: $info;
+  font-size: 14px;
+  text-align: center;
+}
+
+h1 {
+  color: $title;
+  font-weight: 300;
+  font-size: 36px;
+  max-width: 460px;
+  text-align: center;
+}
+
+.text-contact-message {
+  color: $contact-message
+}
+
+.text-primary {
+  color: $primary
+}
