@@ -1,71 +1,116 @@
 @import "Variables.scss";
 @import "Font.scss";
+@import "Layout.scss";
+@import "Spacing.scss";
+@import "Text.scss";
 @import "Animation.scss";
 
 html,
 body,
 .root,
 .App {
-  height: 100vh;
-  font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
+	height: 100vh;
+	font-family: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu,
+		Cantarell, Fira Sans, sans-serif;
+
+	> ::after {
+		background-color: $primary;
+		left: 0;
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 100%;
+		height: 127px;
+		content: "";
+		z-index: -1;
+	}
 }
 
 header {
-  background-color: $grey-1;
-  height: 39px;
-  padding: 10px 16px;
+	background-color: $grey-1;
+	height: 39px;
+	padding: 10px 16px;
 }
 
 .App {
-  background-color: $grey-5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Grow {
-  flex-grow: 1;
+	background-color: $grey-5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 input {
-  border-radius: 18px;
-  border-color: $grey-2;
-  border-style: solid;
-  outline: none;
-  width: 100%;
-  padding-left: 10px;
+	border-radius: 18px;
+	border-color: $grey-2;
+	border-style: solid;
+	outline: none;
+	width: 100%;
+	padding-left: 10px;
+}
+
+.PositionRelative {
+	position: relative;
 }
 
 .InputContainer {
-  display: flex;
-  flex-grow: 0;
-  width: 100%;
-  padding: 5px 8px;
+	display: flex;
+	flex-grow: 0;
+	width: 100%;
+	padding: 5px 8px;
 
-  input {
-    padding-left: 65px !important;
-  }
+	input.InputIcon {
+		padding-left: 65px !important;
+	}
 
-  svg {
-    display: flex;
-    align-self: center;
-    position: absolute;
-    margin-left: 18px;
-    color: $grey-6;
-  }
+	svg {
+		display: flex;
+		align-self: center;
+		position: absolute;
+		margin-left: 18px;
+		color: $grey-6;
+	}
+}
+
+.ButtonIcon {
+	padding: 13px;
+	border-radius: 100%;
+	cursor: pointer;
+	outline: none;
+	border-width: 0;
+	transition: background 0.3s ease;
+	background: transparent;
+
+	i,
+	svg {
+		user-select: none;
+		pointer-events: none;
+		width: 18px !important;
+		height: 18px;
+		color: $grey-6;
+	}
+
+	&.Medium {
+		i,
+		svg {
+			width: 26px !important;
+			height: 26px;
+		}
+	}
+
+	&.Pressed {
+		background: $grey-5;
+	}
 }
 
 .InputSearch {
-  input:focus + svg {
-    @include animation(
-      "rotate-bottom-left 200ms 1, color-grey-to-primary 800ms 1 forwards"
-    );
-  }
+	input:focus + svg {
+		@include animation(
+			"rotate-bottom-left 200ms 1, color-grey-to-primary 800ms 1 forwards"
+		);
+	}
 
-  input.InputContainer__InputTouched:not(:focus) + svg {
-    @include animation(
-      "rotate-top-right 100ms 1"
-    );
-  }
+	input.InputContainer__InputTouched:not(:focus) + svg {
+		@include animation("rotate-top-right 100ms 1");
+	}
 }

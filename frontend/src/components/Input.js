@@ -21,7 +21,7 @@ const Input = ({ icon, onFocus, className, ...props }) => {
   return (
     <div className={`InputContainer ${className}`}>
       <input
-        className={touched ? "InputContainer__InputTouched" : ""}
+        className={`${(touched ? "InputContainer__InputTouched" : "")} ${icon ? "InputIcon" : ""}`}
         onFocus={handleFocus}
         {...props}
       ></input>

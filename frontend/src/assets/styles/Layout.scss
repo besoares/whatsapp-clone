@@ -1,0 +1,20 @@
+.Flex {
+	display: flex;
+}
+
+.FlexColumn {
+	display: flex;
+	flex-direction: column!important;
+}
+
+.ItemsStart, .ItemsLeft {
+	align-items: start!important;
+}
+
+.Grow {
+	flex-grow: 1;
+}
+
+.ZoomOutSm {
+	zoom: .9;
+}
